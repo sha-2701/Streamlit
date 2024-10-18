@@ -27,6 +27,11 @@ st.text_input("Enter your name")
 
 st.sidebar.text_input("Enter your Surname")
 
+# Adding file uploader 
+st.file_uploader("Upload your .png file", type='png')
+
+st.sidebar.file_uploader("Upload your .jpeg file", type='jpeg')
+
 st.write("Here's our first attempt at using data to create a table:")
 st.write(pd.DataFrame({
     'first column': [1, 2, 3, 4],
@@ -36,6 +41,7 @@ st.write(pd.DataFrame({
 dataframe = pd.DataFrame(
     np.random.randn(10, 20),
     columns=('col %d' % i for i in range(20)))
-
+#Adding Line Chart
+st.line_chart(dataframe)
 st.dataframe(dataframe.style.highlight_max(axis=0))
 
